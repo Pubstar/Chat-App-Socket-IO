@@ -1,0 +1,29 @@
+.chatbox-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages {
+    height: 75vh;
+    overflow: scroll;
+    font-size: 22px;
+}
+
+.input {
+    min-height: 5vh;
+    display: flex;
+}
+
+#inputText {
+    width: 100%;
+}
+
+.input button {
+    width: 100px;
+}
+
+.setRight {
+    margin-left: auto;
+    text-align: right;
+}
