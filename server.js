@@ -14,18 +14,18 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-    users++;
-    socket.on('disconnect', () => {
-        users--;
-        io.emit('updateUsers', users);
-    })
-    socket.on('message', (data) => {
-        io.emit('message', data);
-    })
-
+  users++;
+  socket.on('disconnect', () => {
+    users--;
     io.emit('updateUsers', users);
+  })
+  socket.on('message', (data) => {
+    io.emit('message', data);
+  })
+
+  io.emit('updateUsers', users);
 });
 
-server.listen(3000, () => {
-  console.log('listening on *:3000');
-});
+const listener = app.listen(process.env.PORT || 3000, () => {
+  console.log('Server started on port: ' + listener.address().port);
+})
