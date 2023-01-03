@@ -1,4 +1,4 @@
-var socket = io();
+const socket = io();
 const send_button = document.getElementById('send-button');
 const messagesList = document.getElementById('messagesList');
 const input = document.getElementById('inputText');
